@@ -27,7 +27,7 @@ El resultado final debe ser algo similar a esto:
 
 ## Iteraciones
 
-Para completar el ejercicio sigue los pasos siguientes y asegúrate que la lista se comporta como se decribe arriba.
+Para completar el ejercicio utiliza los archivos del directorio __starter-code__. Sólo tienes que centrarte en la parte de JavaScript, sigue los pasos siguientes y asegúrate que la lista se comporta como se describe en la intro de este documento.
 
 ### Iteración 1
 
