@@ -25,7 +25,7 @@ let removeItem=(e)=>{
 }
 
 let chekedItem =(e)=>{
-    e.path[1].classList.add("list__item--checked");
+    e.path[1].classList.toggle("list__item--checked");
 } 
 
 //#endregion Eventos
