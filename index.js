@@ -16,8 +16,10 @@ window.addEventListener("load",()=>{
 //#region Eventos
 let addItem=()=>{
     let input =document.querySelector("input");
-    crearItem(input.value);
+    if(input.value.trim().length>0){
+    crearItem(input.value.trim());
     input.value="";
+    }
 }
 
 let removeItem=(e)=>{
