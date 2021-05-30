@@ -20,13 +20,13 @@ let addItem=()=>{
     input.value="";
 }
 
-let removeItem=function(e){
+let removeItem=(e)=>{
     e.path[1].remove()
 }
 
-let chekedItem =function(e){
+let chekedItem =(e)=>{
     e.path[1].classList.add("list__item--checked");
-} ;
+} 
 
 //#endregion Eventos
 
@@ -46,6 +46,7 @@ function crearItem(nombreItem)
     //asignar Eventos
     deleteItem.addEventListener("click",removeItem);
     checkItem.addEventListener("click",chekedItem);
+
     //añadir valores a las etiquetas
     deleteItem.innerText="X";
     checkItem.innerText="✔";
@@ -55,8 +56,6 @@ function crearItem(nombreItem)
     deleteItem.classList.add("list__delete-btn");
     checkItem.classList.add("list__check-btn");
     document.querySelector("ul").appendChild(item);
-
-    //deleteItem.parentElement.remove();
     
 }
 
