@@ -1,17 +1,18 @@
 //ADD ITEM
-window.addEventListener('load', () => {
+/*window.addEventListener('load', () => {
     const input = document.querySelector('input');
     const button = document.addEventListener('click', addItem);
+
 });
 
 
 let addItem = () => {
     let input = document.querySelector('input'),
-        if (value.length = 0) {
+        if(value.length = 0){ 
             newItem(input.value);
-        }
+        } 
 };
-newItem(nameItem) => {
+let newItem = (nameItem) => {
     let checkItem = document.createElement('a');
     let deleteItem = document.createElement('a');
     let text = document.createTextNode(newItem);
@@ -49,4 +50,11 @@ button.addEventListener('click', () => {
         appendedItem[i].style.color = lastPickedColor;
     }
     input.value = '';
-});
+});*/
+
+
+window.onload = function() {
+    Infinity();
+    const input = document.querySelector('input');
+    const button = document.addEventListener('click', addItem);
+};
