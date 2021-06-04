@@ -1,74 +1,84 @@
+let input;
+
 window.addEventListener('load', () => {
 
-    //newItem("Milk");
 
     let button = document.querySelector("button");
     button.addEventListener('click', addItem);
-    let input = document.querySelector('input');
+    input = document.querySelector('input');
     let lista = document.querySelector('.list');
-    //let input = document.querySelector('button').addEventListener('click', addItem);
+    input.focus();
+    //input.item(0).focus();
+    console.log('open...');
 
 });
 
 let addItem = () => {
-
-    //let currentItem = document.getElementsByTagName('input');
+    console.log('añadir item...');
     let newItem;
-    let input = document.querySelector('input');
+    input = document.querySelector('input');
+
     if (input.value.length > 0) {
         newItem = (input.value);
         input.value = '';
+    } else {
+        return false;
     }
 
 
-// crear elemento
+    // crear elemento
+    console.log('crear elemento...');
 
     let listItem = document.createElement('li');
     let checkItem = document.createElement('a');
     //let text = document.createTextNode(item);
     let deleteItem = document.createElement('a');
 
-// añadir contenido
+    // añadir contenido
+    console.log('añadir contenido...');
 
-    deleteItem.innerText = 'x';  // pintar icono delete
-    checkItem.innerText = '✔';   // pintar icono checked
-    listItem.textContent=newItem;  // escribir el texto dentro  del continente
+    deleteItem.innerText = 'X'; // pintar icono delete
+    checkItem.innerText = '✔'; // pintar icono checked
+    listItem.textContent = newItem; // escribir el texto dentro de la caja
 
     listItem.classList.add('list__item');
     deleteItem.classList.add('list__delete-btn');
     checkItem.classList.add('list__check-btn');
+    document.querySelector('ul').appendChild(listItem);
 
-    checkItem.addEventListener('click',checkedItem);
-    deleteItem.addEventListener('click',removeItem);
+    checkItem.addEventListener('click', checkedItem);
+    deleteItem.addEventListener('click', removeItem);
+
 
     listItem.appendChild(checkItem);
     listItem.appendChild(deleteItem);
-    document.querySelector('ul').appendChild(listItem);
+    input.focus();
 
 };
-
-
 
 let removeItem = (e) => {
-    e.target.addEventListener
-    //deleteItem.currentTarget.parentNode.remove();
-    input.item(0).focus();
-    deleteItem.addEventListener('click', removeItem);
+    //e.target.addEventListener('click', removeItem);
+    e.currentTarget.parentNode.remove();
+    //deleteItem.addEventListener('click', removeItem);
+    console.log('eliminar item...');
+    input.focus();
 };
 
-let checkedItem = (checkItem) => {
-    //checkItem.currentTarget.parentNode.add();
-    /*let parent_li_anchor = checkItem.currentTarget.parentNode;
-    if (parent_li_anchor.classList.contains(class_item_cheked)) {
-        parent_li_anchor.classList.remove(class_item_cheked);
+
+let checkedItem = (e) => {
+
+
+    checkItem = e.currentTarget.parentNode;
+    if (checkItem.classList.contains('list__item--checked')) {
+        checkItem.classList.remove('list__item--checked');
     } else {
-        parent_li_anchor.classList.add(class_item_cheked);
-    }*/
+        checkItem.classList.add('list__item--checked');
+    }
 
-    input.item(0).focus();
-    checkItem.addEventListener('click', checkedItem);
+    input.focus();
 
 
+    console.log('marcar item...');
 
 };
 
